@@ -26,8 +26,6 @@ No starter code has been provided. Create your own HTML, CSS, and JavaScript fil
 
 Create a website that allows users to search for music using the Spotify API and fulfills the Features list outlined below.
 
-**Don't forget work on your Resume and Cover Letters for Outcomes!**
-
 ## Submission
 
 Homework is due Sunday by **11pm**. Follow the [Homework Guide](https://git.generalassemb.ly/nyc-wdi-fisher/student-resources/blob/master/homework-guide.md) for instructions.
@@ -49,4 +47,4 @@ Homework is due Sunday by **11pm**. Follow the [Homework Guide](https://git.gene
 * Implement Debounce feature for the search bar
 * For song results, let the user preview the song - Look into the `preview_url` property returned by Spotify API and read up on `<audio>` and `<source>` html tags
 
-**Go Pats!**
+
