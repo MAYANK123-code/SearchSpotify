@@ -37,13 +37,13 @@ Homework is due Sunday by **11pm**. Follow the [Homework Guide](https://git.gene
 * User should be able to select Artist, Album, or Song from a drop down menu for search
 * User should be able to see a list of results from their search
 * When a user searches by Artist, the user should be able to see detailed information of each matching artist
-* When a user searches by Artist, the user should be able to click on a button that shows a few of their albums - You decide how to present this information (i.e. modal, side-column, different page, etc)
-* When a user searches by Album, the user should be able to click on the Artist's name to reveal a modal with the Artist's detailed information
 * Use Handlebars.js to template the Spotify API data
 * Design is important! Please spend some time thinking about how to lay out all of this information. Spend time making the website look great! This is an opportunity to practice your CSS skills!
 
 #### Bonus
 
+* When a user searches by Artist, the user should be able to click on a button that shows a few of their albums - You decide how to present this information (i.e. modal, side-column, different page, etc)
+* When a user searches by Album, the user should be able to click on the Artist's name to reveal a modal with the Artist's detailed information
 * Implement Debounce feature for the search bar
 * For song results, let the user preview the song - Look into the `preview_url` property returned by Spotify API and read up on `<audio>` and `<source>` html tags
 
