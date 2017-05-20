@@ -1,16 +1,10 @@
 console.log("JS loaded");
 
 const API_URL_BASE = 'https://api.spotify.com/v1/search?q=';
-// const API_SONG = `${songSearch}&type=song`;
-// const API_ARTIST = `${artistSearch}&type=artist`;
-// const API_ALBUM = `${albumSearch}&type=album`;
-// let API_URL = API_URL_BASE + searchURL;
-// API_URL = API_URL_BASE
+
 $(document).ready(function() {
   const $searchForm = $('#seach-form');
   const $resultsLocation = $("#results-location");
-  var albumSearch = "Hornsby";
-  var category = "album";
   // const showSpotify = (music) => {
   //   // execute the dynamic version with our data
   //   // our template is expecting a key called 'music'
@@ -79,7 +73,6 @@ $(document).ready(function() {
         .then(function(artists) {
           console.log(artists);
           // showSpotify(results);
-          $("#results-location").html("Hello There");
           // execute the dynamic version with our data
           // our template is expecting a key called 'artists'
           // we'll use an ES6 shorthand:
@@ -90,7 +83,7 @@ $(document).ready(function() {
 
 
           // swap out the destination placeholder with our new HTML
-          $("#results-location").html(compiledTemplate);
+          $resultsLocation.html(compiledTemplate);
 
           form.reset()
         })
@@ -105,7 +98,6 @@ $(document).ready(function() {
         .then(function(artists) {
           console.log(artists);
           // showSpotify(results);
-          $("#results-location").html("Hello There");
           // execute the dynamic version with our data
           // our template is expecting a key called 'artists'
           // we'll use an ES6 shorthand:
@@ -114,10 +106,9 @@ $(document).ready(function() {
             artists
           });
 
-
           // swap out the destination placeholder with our new HTML
-          $("#results-location").html(compiledTemplate);
-
+          $resultsLocation.html(compiledTemplate);
+          // reset form
           form.reset()
         })
         // .then(printResults)
@@ -131,7 +122,6 @@ $(document).ready(function() {
         .then(function(artists) {
           console.log(artists);
           // showSpotify(results);
-          $("#results-location").html("Hello There");
           // execute the dynamic version with our data
           // our template is expecting a key called 'artists'
           // we'll use an ES6 shorthand:
@@ -140,9 +130,8 @@ $(document).ready(function() {
             artists
           });
 
-
           // swap out the destination placeholder with our new HTML
-          $("#results-location").html(compiledTemplate);
+          $resultsLocation.html(compiledTemplate);
 
           form.reset()
         })
@@ -155,9 +144,10 @@ $(document).ready(function() {
       runSearchAlbum();
     } else if (formData.category === "track") {
       runSearchSong();
-      category
     }
-
+    $("#search-param").html(
+      `<h2>You searched for <span class="searched-text">${formData.query}</span> in <span class="searched-text">${formData.category}s</span>.</h2>`
+    );
 
   });
 

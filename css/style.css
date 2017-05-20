@@ -22,6 +22,15 @@ h1 {
   text-shadow: 3px 3px 8px rgba(0,0,0,.75);
 
 }
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  text-shadow: 3px 3px 8px rgba(0,0,0,.75);
+
+}
+.searched-text {
+  color: #82BE41;
+}
 header {
   text-align: center;
   margin-bottom: 20px;

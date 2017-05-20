@@ -28,16 +28,26 @@
       <h1>Seach Spotify</h1>
       <form id="seach-form" class="form-style" method="post">
         <select id="search-category" class="select-items" name="searchCategory">
+          <option name="" value=""></option>
           <option name="artist" value="artist">Artist</option>
           <option name="album" value="album">Album</option>
-          <option name="track" value="track">Song Title</option>
+          <option name="track" value="track">Track</option>
         </select>
         <input type="text" class="seach-input" name="searchParam" value="">
         <button id="submit-button" class="button-search" type="submit" name="button">Submit</button>
       </form>
+      <div id="search-param" class="users-search">
+
+      </div>
     </header>
     <section id="results-location">
 
     </section>
+    <div id="modal-background" class="modal-bkgnd">
+      <div class="modal-albums">
+
+      </div>
+
+    </div>
   </body>
 </html>
