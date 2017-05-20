@@ -1,0 +1,13 @@
+{{#each artists}}
+{{#each items}}
+<div class="result">
+  <div class="result-image"><img class="result-image-style" src="{{images.[0].url}}" /></div>
+  <div class="result-title">{{name}}</div>
+  <div class="result-on-spotify">Learn more on</br>
+    <a href="{{external_urls.spotify}}" target="_blank">
+      <img src="spotify-1.png" height="25px" width="76px" /></a></div>
+</div>
+{{else}}
+<p>sorry, no super heros here</p>
+{{/each}}
+{{/each}}
