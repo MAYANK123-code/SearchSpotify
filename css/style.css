@@ -1,0 +1,39 @@
+body {
+  background-color: #000;
+  color: #FFF;
+}
+h1 {
+  font-size: 40px;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* styling for main container on page that will hold search results*/
+#results-location {
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1000px;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  border: #666 1px dotted;
+  height: 800px;
+  margin: 0 auto;
+}
+/* styling for individual container that will hold a single search result*/
+.result {
+  border: blue 1px solid;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+}
