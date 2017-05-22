@@ -27,7 +27,7 @@ templates['spotifyListalbum'] = template({"1":function(container,depth0,helpers,
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.external_urls : depth0)) != null ? stack1.spotify : stack1), depth0))
     + "\" target=\"_blank\">\n      <img src=\"spotify-1.png\" height=\"25px\" width=\"76px\" /></a></div>\n</div>\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "<p>sorry, no super heros here</p>\n";
+    return "<p>Woops, it looks like nothing matched your search.<br>\nPlease try again.</p>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -52,7 +52,7 @@ templates['spotifyListartist'] = template({"1":function(container,depth0,helpers
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.external_urls : depth0)) != null ? stack1.spotify : stack1), depth0))
     + "\" target=\"_blank\">\n    <img src=\"spotify-1.png\" height=\"25px\" width=\"76px\" /></a></div>\n</div>\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "<p>sorry, no super heros here</p>\n";
+    return "<p>Woops, it looks like nothing matched your search.<br>\nPlease try again.</p>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -73,7 +73,7 @@ templates['spotifyListartistalbums'] = template({"1":function(container,depth0,h
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.external_urls : depth0)) != null ? stack1.spotify : stack1), depth0))
     + "\" target=\"_blank\">\n      <img src=\"spotify-1.png\" height=\"25px\" width=\"76px\" /></a></div>\n</div>\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "<p>sorry, no super heros here</p>\n";
+    return "<p>Woops, it looks like nothing matched your search.<br>\nPlease try again.</p>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -104,7 +104,7 @@ templates['spotifyListsong'] = template({"1":function(container,depth0,helpers,p
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.external_urls : depth0)) != null ? stack1.spotify : stack1), depth0))
     + "\" target=\"_blank\">\n    <img src=\"spotify-1.png\" height=\"25px\" width=\"76px\" /></a></div>\n</div>\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "<p>sorry, no super heros here</p>\n";
+    return "<p>Woops, it looks like nothing matched your search.<br>\nPlease try again.</p>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 

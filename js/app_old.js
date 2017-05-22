@@ -9,7 +9,6 @@ $(document).ready(function() {
   const $resultTitle2 = ".result-title-2";
   const $viewAlbumsButton = ".view-albums button";
 
-  // Funciton to get a specific artist's albums and info and print to modal
   var viewArtistAlbums = function(name) {
     $resultsLocation.on('click', name, function(event) {
       event.preventDefault();
@@ -78,7 +77,7 @@ $(document).ready(function() {
     const formData = {
       category: inputs.searchCategory.value,
       query: inputs.searchParam.value,
-    };
+    }
     console.log(formData);
 
     const runSearchArtist = function() {
@@ -88,21 +87,10 @@ $(document).ready(function() {
         })
         .then(function(artists) {
           console.log(artists);
-          var compiledTemplate;
-          if (formData.category === "artist") {
-            compiledTemplate = Handlebars.templates.spotifyListartist({
-              artists
-            });
-          } else if (formData.category === "album") {
-            compiledTemplate = Handlebars.templates.spotifyListalbum({
-              artists
-            });
-          } else if (formData.category === "track") {
-            compiledTemplate = Handlebars.templates.spotifyListsong({
-              artists
-            });
-            viewTrackAlbum();
-          }
+
+          const compiledTemplate = Handlebars.templates.spotifyListartist({
+            artists
+          });
 
           // swap out the destination placeholder with our new HTML
           $resultsLocation.html(compiledTemplate);
@@ -112,9 +100,52 @@ $(document).ready(function() {
         // .then(printResults)
         .catch(e => console.error(e));
     };
-    runSearchArtist();
+    const runSearchAlbum = function() {
+      $.ajax({
+          type: 'GET',
+          url: `https://api.spotify.com/v1/search?q=${formData.query}&type=${formData.category}`,
+        })
+        .then(function(artists) {
+          console.log(artists);
+          const compiledTemplate = Handlebars.templates.spotifyListalbum({
+            artists
+          });
 
-    // text to display what user searched for after clicking submit
+          // swap out the destination placeholder with our new HTML
+          $resultsLocation.html(compiledTemplate);
+          // reset form
+          form.reset();
+        })
+        // .then(printResults)
+        .catch(e => console.error(e));
+    };
+    const runSearchSong = function() {
+      $.ajax({
+          type: 'GET',
+          url: `https://api.spotify.com/v1/search?q=${formData.query}&type=${formData.category}`,
+        })
+        .then(function(artists) {
+          console.log(artists);
+          const compiledTemplate = Handlebars.templates.spotifyListsong({
+            artists
+          });
+
+          // swap out the destination placeholder with our new HTML
+          $resultsLocation.html(compiledTemplate);
+
+          form.reset();
+        })
+        // .then(printResults)
+        .catch(e => console.error(e));
+    };
+    if (formData.category === "artist") {
+      runSearchArtist();
+    } else if (formData.category === "album") {
+      runSearchAlbum();
+    } else if (formData.category === "track") {
+      runSearchSong();
+      viewTrackAlbum();
+    }
     $("#search-param").html(
       `<h2>You searched for <span class="searched-text">${formData.query}</span> in <span class="searched-text">${formData.category}s</span>.</h2>`
     );
@@ -135,9 +166,8 @@ $(document).ready(function() {
   // Event listener on title of page to re-set page on click
   $("h1").on("click", function() {
     $resultsLocation.html("");
-    $("#seach-form").reset();
     $("#search-param").html(
       `<img src="spotify-logo-3.png" width="500px" height="492px" />`
     );
-  });
+  })
 });
