@@ -135,9 +135,9 @@ $(document).ready(function() {
   // Event listener on title of page to re-set page on click
   $("h1").on("click", function() {
     $resultsLocation.html("");
-    $("#seach-form").reset();
     $("#search-param").html(
       `<img src="spotify-logo-3.png" width="500px" height="492px" />`
     );
+    $("#seach-form").reset();
   });
 });
