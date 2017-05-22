@@ -1,9 +1,9 @@
 {{#each artists}}
 {{#each items}}
 <div class="result">
-  <div class="result-image"><img class="result-image-style" src="{{images.[0].url}}" /></div>
+  <div class="result-image"><img class="result-image-style" src="{{album.images.[0].url}}" /></div>
   <div class="result-title">{{name}}</div>
-  <div class="result-title-2">by <a href="{{artists.[0.external_urls.spotify]}}" target="_blank">{{artists.[0].name}}</a></div>
+  <div class="result-title-2">by <a href="{{artists.[0].external_urls.spotify}}" target="_blank">{{artists.[0].name}}</a></div>
   <div class="audio-preview">
     <audio controls src="{{preview_url}}">
 

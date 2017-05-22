@@ -5,37 +5,31 @@ const API_URL_BASE = 'https://api.spotify.com/v1/search?q=';
 $(document).ready(function() {
   const $searchForm = $('#seach-form');
   const $resultsLocation = $("#results-location");
-  // const showSpotify = (music) => {
-  //   // execute the dynamic version with our data
-  //   // our template is expecting a key called 'music'
-  //   // we'll use an ES6 shorthand:
-  //   // @see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
-  //   const compiledTemplate = Handlebars.templates.spotifyList({
-  //     music
-  //   });
-  //
-  //
-  //   // swap out the destination placeholder with our new HTML
-  //   $resultsLocation.html(compiledTemplate);
-  // };
 
-  // const runSearch = function() {
-  //   $.ajax({
-  //       type: 'GET',
-  //       url: `${API_URL_BASE}${albumSearch}&type=${category}`,
-  //     })
-  //     .then(function(showSpotify) {
-  //       // console.log(results);
-  //
-  //       // form.reset()
-  //     })
-  //     // .then(printResults)
-  //     .catch(e => console.error(e));
-  // };
+  $resultsLocation.on('click', '.result-title-2', function(event) {
+    const artistSelected = $(event.currentTarget).data('artistName');
+    $("#modal-header h2").html(artistSelected);
+    // prevent the form from submitting
+    $.ajax({
+        type: 'GET',
+        url: `https://api.spotify.com/v1/search?q=${artistSelected}&type=album`,
+      })
+      .then(function(artists) {
+        console.log(artists);
+        const compiledTemplate = Handlebars.templates.spotifyListartistalbums({
+          artists
+        });
+
+        // print new content to the modal
+        $("#modal-content").html(compiledTemplate);
+        $("#modal").fadeIn();
+
+      })
+      .catch(e => console.error(e));
+  });
 
 
-
-  $("header").on('submit', 'form', (event) => {
+  $("header").on('submit', 'form', function(event) {
     // prevent the form from submitting
     event.preventDefault();
     // stop the event from porpagating
@@ -150,6 +144,4 @@ $(document).ready(function() {
     );
 
   });
-
-  // runSearch();
 });
