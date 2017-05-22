@@ -209,6 +209,12 @@ button a {
 button a:hover {
   color: #000;
 }
+
+.copyright {
+  text-align: center;
+  font-size: 10px;
+  color: #82BE41;
+}
 /* Modal */
 #modal {
   background-color: rgba(0,0,0,.7);
