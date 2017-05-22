@@ -1,7 +1,7 @@
 {{#each artists}}
 {{#each items}}
 <div class="result">
-  <div class="result-image"><img class="result-image-style" src="{{images.[0].url}}" /></div>
+  <div class="result-image" data-album-title="{{name}} {{artists.[0].name}}"><img class="result-image-style" src="{{images.[0].url}}" /></div>
   <div class="result-title">{{name}}</div>
   <div data-artist-name="{{artists.[0].name}}" class="result-title-2"><a>{{artists.[0].name}}</a></div>
   <div data-artist-name="{{artists.[1].name}}" class="result-title-2"><a>{{artists.[1].name}}</a></div>
