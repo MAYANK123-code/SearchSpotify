@@ -17,7 +17,7 @@ $(document).ready(function() {
         'artistName'));
       // Stop the main page from scrolling while modal is displayed (Stack overflow: http://stackoverflow.com/questions/9538868/prevent-body-from-scrolling-when-a-modal-is-opened)
       $("body").css("overflow", "hidden");
-      // prevent the form from submitting
+
       $.ajax({
           type: 'GET',
           url: `https://api.spotify.com/v1/search?q=${artistSelected}&type=album`,
@@ -57,8 +57,6 @@ $(document).ready(function() {
 
           // print new content to the page
           $resultsLocation.html(compiledTemplate);
-
-
         })
         .catch(e => console.error(e));
     });
@@ -116,7 +114,7 @@ $(document).ready(function() {
           // swap out the destination placeholder with our new HTML
           $resultsLocation.html(compiledTemplate);
           // reset form
-          form.reset()
+          form.reset();
         })
         // .then(printResults)
         .catch(e => console.error(e));
@@ -135,7 +133,7 @@ $(document).ready(function() {
           // swap out the destination placeholder with our new HTML
           $resultsLocation.html(compiledTemplate);
 
-          form.reset()
+          form.reset();
         })
         // .then(printResults)
         .catch(e => console.error(e));
@@ -158,12 +156,14 @@ $(document).ready(function() {
     $modal.fadeOut();
     $('body').css('overflow', 'auto');
   });
+  // event listener to change button text color when mouse hovers
   $("button").on("mouseenter", function() {
     $(this).css("color", "#000");
   });
   $("button").on("mouseleave", function() {
     $(this).css("color", "#FFF");
   });
+  // Event listener on title of page to re-set page on click
   $("h1").on("click", function() {
     $resultsLocation.html("");
     $("#search-param").html(
