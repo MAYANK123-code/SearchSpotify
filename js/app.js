@@ -138,6 +138,7 @@ $(document).ready(function() {
     $("#search-param").html(
       `<img src="spotify-logo-3.png" width="500px" height="492px" />`
     );
-    $("#seach-form").reset();
+    document.querySelector("#seach-form").reset();
+    // $("#seach-form input").reset();
   });
 });
